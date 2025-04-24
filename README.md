@@ -18,7 +18,7 @@ The findings of this study could contribute to:
   - Health-related expenses  
   - Miscellaneous purchases  
 
-- **Hormonal Cycle Tracking Data:** Extracted from **Apple Health **,**menstrual cycle phases**, including:  
+- **Hormonal Cycle Tracking Data:** Extracted from **Apple Health**,**menstrual cycle phases**, including:  
   - **Follicular Phase**  
   - **Ovulatory Phase**  
   - **Luteal Phase**  
