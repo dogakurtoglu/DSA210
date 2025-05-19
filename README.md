@@ -2,124 +2,121 @@
 
 ## **Project: Hormonal Cycle and Spending Habits**
 
+---
+
 ## **Overview**
 
-This project aims to analyze how hormonal cycle phases influence personal spending habits. By categorizing weekly expenditures and correlating them with different phases of the hormonal cycle, the project will uncover potential patterns and trends in financial behavior.
+This project investigates how hormonal cycle phases may influence daily personal spending behavior. By categorizing financial transactions and aligning them with menstrual phases, the project identifies patterns between biological rhythms and economic decisions.
+
+---
 
 ## **Motivation**
 
-There is a common perception that women's financial behaviors are unpredictable due to hormonal fluctuations throughout their cycle. However, this assumption lacks empirical validation. This project seeks to challenge this notion by analyzing whether spending habits follow a **predictable pattern** in relation to hormonal phases. By systematically examining expenditure trends across different cycle phases, I aim to determine whether financial decisions are influenced by biological rhythms in a structured and measurable way.
+There is a common assumption that women's spending behaviors are unpredictable due to hormonal fluctuations. This project challenges that assumption by evaluating whether spending follows structured, phase-dependent patterns using data analysis and predictive modeling.
 
-**The findings of this study could contribute to:**
+**This study contributes to:**
+- **Personal Finance Strategies:** Creating cycle-aware budgeting insights.
+- **Behavioral Economics:** Exploring phase-based decision-making shifts.
 
-- **Personal Finance Strategies:** Understanding how biological cycles may affect budgeting.
-- **Behavioral Economics:** Exploring the relationship between hormonal cycles and financial decision-making.
+---
 
 ## **Data Sources**
 
-- **Personal Spending Data:** Extracted from bank transaction records, categorized into:
-  - Food
-  - Personal care
-  - Entertainment
-  - Utilities
-  - Health-related expenses
-  - Miscellaneous purchases
+- **Spending Data:** Daily categorized expenses from personal bank records, including:
+  - Food, personal care, entertainment, subscriptions, health, etc.
+- **Hormonal Cycle Data:** Tracked via Apple Health and labeled by:
+  - Menstrual, Follicular, Ovulatory, and Luteal phases
 
-- **Hormonal Cycle Tracking Data:** Extracted from Apple Health, including:
-  - Follicular Phase
-  - Ovulatory Phase
-  - Luteal Phase
-  - Menstrual Phase  
-  Tracked using a period tracking app or manual records.
+---
 
 ## **Methodology**
 
-### 1. Data Extraction & Cleaning
-- Categorized raw bank transaction records.
-- Aligned weekly spending data with the corresponding hormonal phase.
-- Ensured completeness and consistency across tracking period.
+### 1. Data Processing
+- Grouped transaction data by day and spending category
+- Merged with phase data using date
+- Added features: weekday, weekend, total_spent, and log-transformed spending
 
 ### 2. Exploratory Data Analysis (EDA)
-- Descriptive statistics and visualizations of spending patterns across phases:
-  - Category frequency distributions
-  - Amount range histograms
-  - Weekly trends for specific categories (e.g., dessert)
+- Visualized category frequency and amount distributions
+- Compared spending trends across phases
+- Used histograms, bar plots, and time series (e.g., dessert category)
 
-### 3. Correlation & Statistical Analysis
-- Applied hypothesis tests:
-  - T-Test, ANOVA, Mann-Whitney U for between-phase comparisons
-- Used Pearson correlation to evaluate relationships between day-of-cycle and spending.
+### 3. Statistical Analysis
+- Applied T-Test, ANOVA, and Mann-Whitney U to compare phase-based distributions
+- Used Pearson correlation to explore relationships with cycle days
 
-### 4. Insights & Interpretation
-- Identified behavioral variations by phase.
-- Discussed practical takeaways for budgeting strategies and self-awareness.
+### 4. Predictive Modeling
 
-### 5. Predictive Modeling 
+#### 🔷 Task 1: Regression – Predict Daily Spending
+- **Model:** Random Forest Regressor
+- **Features:** 14 category columns + weekday/weekend
+- **Target:** `log_total_spent`
+- **Metrics:** MAE, RMSE, R², 5-fold Cross-validation
+- **Visuals:**
+  - Scatter plot (Actual vs. Predicted)
+  - Residual histogram
+  - Boxplot of spending by phase
 
-#### Task 1: Regression – Predict Daily Spending
-- **Goal:** Estimate total daily spending using phase-related features.
-- **Features:** Phase, day of cycle, category frequency, weekday/weekend
-- **Models:** Linear Regression, Random Forest Regressor
-- **Metrics:** RMSE, MAE, R²
+#### 🔷 Task 2: Classification – Predict Hormonal Phase
+- **Model:** Random Forest Classifier
+- **Features:** Same as regression + `total_spent`
+- **Target:** `phase`
+- **Metrics:** Accuracy, F1-score, confusion matrix
+- **Visuals:**
+  - Confusion matrix
+  - Phase-specific accuracy bar chart
+  - Feature importance rankings
 
-#### Task 2: Classification – Predict Hormonal Phase
-- **Goal:** Predict the hormonal phase using daily spending behavior.
-- **Features:** Spending categories, total amount, purchase count, weekday
-- **Models:** Logistic Regression, Random Forest Classifier
-- **Metrics:** Accuracy, F1-score, Confusion Matrix
+---
 
-## **Data Collection Plan**
+## **Key Results**
 
-- Manual or automated recording of personal spending.
-- Hormonal phase data tracked via period app or manually labeled.
-- Data collected over multiple cycles to ensure balanced representation.
+### Task 1 – Regression:
+- **Test R²:** 0.8927  
+- **Cross-validated R²:** 0.708  
+- **MAE:** 0.36, **RMSE:** 0.56  
+✅ Model accurately predicts log spending based on daily behavior
 
-## **Expected Outcomes**
+### Task 2 – Classification:
+- **Accuracy:** 0.373  
+- **F1 Score:** 0.31  
+⚠️ Model performs well only on certain phases (e.g., Luteal), limited by data imbalance
 
-- Identification of cycle-sensitive spending categories.
-- Discovery of measurable phase-behavior links.
-- Practical applications for cycle-aware personal finance tools.
-
-## **Visualizations**
-
-- Category frequency bar charts
-- Amount range histograms
-- Weekly dessert spending time series
-- Actual vs. predicted scatter plots
-- Confusion matrices for classification results
+---
 
 ## **Limitations**
+- Single-user dataset: results are not generalizable
+- Phase representation imbalance (e.g., few ovulation days)
+- No behavioral confounders (e.g., mood, stress, income events) included
 
-- Single-person dataset limits generalizability.
-- Potential inaccuracies in manually tracked phase data.
-- Confounding variables (e.g., external life events) not controlled.
-- Phase representation imbalance (e.g., fewer ovulation days).
+---
 
 ## **Future Work**
+- Expand dataset to multiple users for general insights
+- Include behavioral markers like mood, sleep, productivity
+- Apply sequence-aware models (e.g., LSTM) to capture time dynamics
 
-- Expand to a multi-user dataset.
-- Incorporate mood, sleep, biological markers for richer insights.
-- Apply sequence-aware models (e.g., LSTM) for time-series prediction.
-- Develop personalized, adaptive budgeting apps informed by cycle data.
+---
+
+## **Visualizations**
+- Bar plots and histograms by spending category
+- Time series for specific categories
+- Boxplots by phase
+- Scatter plots and residuals (regression)
+- Confusion matrix and accuracy charts (classification)
+
+---
 
 ## **Project Timeline**
 
 | Date         | Milestone                               |
 |--------------|------------------------------------------|
 | March 10     | Project proposal (README + data plan)    |
-| March 11–25  | Data collection and preliminary cleaning |
-| March 26–Apr 10 | EDA and hypothesis testing           |
-| Apr 11–25    | Visualizations and interpretation        |
-| May 23       | Supervised learning implementation     |
-| May 30       | Final report and GitHub completion       |
+| March 11–25  | Data collection and cleaning              |
+| March 26–Apr 10 | EDA and statistical tests             |
+| Apr 11–25    | Modeling and visualization               |
+| May 23       | Supervised learning completed            |
+| May 30       | Final report and submission              |
 
-## **Files**
-
-- `merged_dataset.csv` – Final enriched dataset
-- `eda_analysis.ipynb` – Exploratory data analysis and visualizations
-- `ml_regression_profit.py` – Regression model code
-- `ml_phase_classifier.py` – Classification model code
-- `requirements.txt` – Python package dependencies
-- `README.md` – Project documentation
-
+---
 
