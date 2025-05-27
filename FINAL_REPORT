@@ -26,89 +26,155 @@ Understanding the connection between hormonal cycles and financial behaviors can
 - Standardized spending categories and encoded phases.
 - Handled missing values and filtered out outliers.
 - Created weekly and phase-based aggregates for analysis.
+## **Exploratory Data Analysis (EDA)**
 
-### **Exploratory Data Analysis (EDA)**
-- Visualized spending trends across phases.
-- Generated category-wise spending summaries.
-- Identified phase-based variability in spending behavior.
+### Insight 1: Category Frequency of Expenditures  
+_(Insert chart: Categories by Expenditure Frequency)_  
+_(Add interpretation)_
 
-### **Statistical Analysis & Hypothesis Testing**
-- ANOVA tests for spending differences across phases.
-- Correlation analysis between phases and category-specific spending.
-- T-tests for pairwise phase comparisons.
+### Insight 2: Distribution of Amount Ranges  
+_(Insert chart: Distribution of Amount Ranges)_  
+_(Add interpretation)_
 
-### **Machine Learning Modeling**
-- Classification models (Logistic Regression, Random Forest) to predict menstrual phase based on spending patterns.
-- Regression models to estimate spending amounts based on phase.
+### Insight 3: Weekly Trends in Dessert Spending  
+_(Insert chart: Dessert Expenditures by Week)_  
+_(Add interpretation)_
 
-## **Data Collection Plan**
-- Merge and clean financial and menstrual phase datasets.
-- Conduct EDA and hypothesis testing.
-- Train classification and regression models.
-- Validate findings with cross-validation and residual analysis.
+### Insight 4: Count of Period and Non-Period Days  
+_(Insert chart: Count of Period and Non-Period Days)_  
+_(Add interpretation)_
 
-## **Findings**
+### Insight 5: Average Duration of Each Menstrual Phase  
+_(Insert chart: Average Duration of Each Menstrual Phase)_  
+_(Add interpretation)_
 
-### **Exploratory Data Analysis**
+### Insight 6: Distribution of Phase Durations  
+_(Insert chart: Distribution of Phase Durations)_  
+_(Add interpretation)_
 
-#### Insight 1
-- A histogram of total spending shows peaks during the **luteal phase**, suggesting increased financial activity.
-![Spending by Phase](images/spending_by_phase.png)
+### Insight 7: Phase Trends Over Time  
+_(Insert chart: Trends in Phase Durations Over Time)_  
+_(Add interpretation)_
 
-#### Insight 2
-- A bar chart of category spending highlights that **café and snack** spending spikes in the luteal phase, while essentials remain steady.
-![Category Spending by Phase](images/category_spending_by_phase.png)
+### Insight 8: Phase Distribution Across Days and Months  
+_(Insert chart: Phase Distribution Across Days and Months)_  
+_(Add interpretation)_
 
-#### Insight 3
-- Variability in daily spending (standard deviation) is highest during the luteal phase, indicating a higher likelihood of impulse spending.
-![Spending Variability](images/spending_variability.png)
+### Insight 9: Menstrual Beginnings by Month and Day  
+_(Insert chart: Distribution of Menstrual Beginnings by Month and Day)_  
+_(Add interpretation)_
 
-#### Insight 4
-- Correlation analysis reveals a **moderate positive correlation** between being in the luteal phase and higher spending in categories like cafés and online shopping.
-| Spending Category   | Luteal | Follicular | Ovulatory | Menstrual |
-|---------------------|:------:|:----------:|:---------:|:---------:|
-| Total Amount        | 0.43   | 0.12       | 0.08      | -0.20     |
-| Café/Restaurant     | 0.51   | 0.15       | 0.05      | -0.25     |
-| Essentials          | 0.10   | 0.05       | 0.03      | -0.05     |
+### Insight 10: Spending Intensity by Day and Month  
+_(Insert chart: Spending Intensity by Day and Month)_  
+_(Add interpretation)_
 
-For more insights, please refer to the [EDA Notebook](link_to_EDA_notebook).
+### Insight 11: Average Spending by Menstrual Phase  
+_(Insert chart: Average Spending by Phase)_  
+_(Add interpretation)_
+
+### Insight 12: Average Spending by Phase and Category  
+_(Insert chart: Average Spending by Phase and Category)_  
+_(Add interpretation)_
+
+### Insight 13: Category Correlation Analysis  
+_(Insert chart: Correlation Between Weekly Spending Categories)_  
+_(Add interpretation)_
+
+### Insight 14: Top Correlated Category Pairs – Pairwise Visualizations  
+_(Insert individual scatterplots: Top 4 category pairs)_  
+_(Add interpretations)_
+
+### Insight 15: Emotional Spending Patterns  
+_(Insert chart: Emotional Spending Distribution by Menstrual Phase)_  
+_(Add interpretation)_
+
+_For full analysis, see the [EDA Notebook](link_to_EDA_notebook)._
 
 ---
 
-### **Hypothesis Testing**
+## **Hypothesis Testing**
 
-#### **Hypothesis 1**
-**Spending Differences Across Menstrual Phases**
-- H₀: Average spending is equal across phases.
-- H₁: At least one phase has a different average spending.
-**Methodology:** ANOVA test on average daily spending across phases.
-**Results:** p-value < 0.05 (significant). Spending is highest in the luteal phase and lowest in the menstrual phase.
-![ANOVA Spending by Phase](images/anova_spending.png)
+### Hypothesis 1: Dessert Spending During Luteal Phase
+- **H₀:** Mean dessert spending during Luteal ≤ Other phases.
+- **H₁:** Mean dessert spending during Luteal > Other phases.
+- 🎯 Permutation Test Results: Mean Difference = 4.64 | P-Value = 0.4424 | Reject H₀: False  
+_(Insert visualization)_  
+_(Add interpretation)_
+
+### Hypothesis 2: Dessert Spending Distribution During Luteal Phase
+- **H₀:** Distribution of dessert spending during Luteal ≤ Other phases.
+- **H₁:** Distribution of dessert spending during Luteal > Other phases.
+- 🔬 Mann–Whitney U Test Results: U-Statistic = 8.0 | P-Value = 0.4444 | Reject H₀: False  
+_(Insert visualization)_  
+_(Add interpretation)_
+
+### Hypothesis 3: Cosmetics Spending During Luteal Phase
+- **H₀:** Mean cosmetics spending during Luteal ≤ Other phases.
+- **H₁:** Mean cosmetics spending during Luteal > Other phases.
+- 🔬 Permutation Test Results: Mean Difference = 99.44 | P-Value = 0.3719 | Reject H₀: False  
+_(Insert visualization)_  
+_(Add interpretation)_
+
+### Hypothesis 4: Clothing Spending During Ovulation Phase
+- **H₀:** Clothing spending during Ovulation ≤ Other phases.
+- **H₁:** Clothing spending during Ovulation > Other phases.
+- 🔬 Mann–Whitney U Test Results: U-Statistic = 12.0 | P-Value = 0.556 | Reject H₀: False  
+_(Insert visualization)_  
+_(Add interpretation)_
+
+### Hypothesis 5: Mean Weekly Spending During Luteal Phase
+- **H₀:** Mean weekly spending during Luteal ≤ Other phases.
+- **H₁:** Mean weekly spending during Luteal > Other phases.
+- _(Add test results)_  
+_(Insert visualization)_  
+_(Add interpretation)_
+
+### Hypothesis 6: Coffee Purchases on Period Days
+- **H₀:** Proportion of coffee days ≤ Non-period days.
+- **H₁:** Proportion of coffee days > Non-period days.
+- _(Add test results)_  
+_(Insert visualization)_  
+_(Add interpretation)_
 
 ---
 
-### **Machine Learning**
+## **Machine Learning**
 
-#### Classification: Predicting Menstrual Phase Based on Spending
+### Task 1: Regression – Predicting Log-Transformed Daily Spending
 
-| Model                 | Accuracy | F1-Score | Precision | Recall |
-|-----------------------|:--------:|:--------:|:---------:|:------:|
-| Logistic Regression   | 0.78     | 0.75     | 0.77      | 0.74   |
-| Random Forest         | 0.81     | 0.79     | 0.80      | 0.78   |
-| Naive Bayes           | 0.62     | 0.55     | 0.58      | 0.52   |
+**Model:** Random Forest Regressor  
+**CV R² Scores:** [0.811, 0.577, 0.859, 0.651, 0.644] | Avg: 0.708  
+**Test Set:** R² = 0.8927 | MAE = 0.36 | RMSE = 0.56
 
-**Feature Importance (Random Forest):**
-| Feature                | Importance Score |
-|------------------------|-----------------|
-| Category_Café          | 0.34            |
-| Category_OnlineShopping| 0.28            |
-| Amount_Log            | 0.22            |
-| Phase_Luteal           | 0.16            |
+**Visualizations:**  
+_(Bar plot: Average actual vs predicted log-spending by phase)_  
+_(Residual histogram)_  
+_(Scatter plot: Actual vs predicted log-spending)_  
+_(Add interpretations)_
 
-![Confusion Matrix](images/ml_confusion_matrix.png)
+---
 
-**Key Insight:**  
-Random Forest performed best at classifying phases based on spending, with an accuracy of **81%**.
+### Task 2: Classification – Predicting Hormonal Phase
+
+**Model:** Random Forest Classifier  
+**Accuracy:** 0.373 | F1 Score (Weighted): 0.310
+
+**Classification Report:**  
+
+| Class          | Precision | Recall | F1 Score |
+|----------------|:---------:|:------:|:--------:|
+| Follicular     | 0.333     | 0.357  | 0.345    |
+| Luteal         | 0.452     | 0.700  | 0.549    |
+| Menstruation   | 0.000     | 0.000  | 0.000    |
+| Ovulation      | 0.000     | 0.000  | 0.000    |
+| Unknown        | 0.000     | 0.000  | 0.000    |
+
+**Visualizations:**  
+_(Confusion matrix)_  
+_(Feature importance plot)_  
+_(Per-phase accuracy chart)_  
+_(Actual vs predicted phase counts)_  
+_(Add interpretations)_
 
 ---
 
